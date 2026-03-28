@@ -1,0 +1,24 @@
+<app-header 
+  [currentTab]="activeTab()" 
+  (tabChange)="activeTab.set($event)">
+</app-header>
+
+<main class="min-h-screen bg-neutral-900 flex flex-col items-center p-8 gap-8 pt-16">
+  
+  @if (activeTab() === 'Tools & Pipelines' || activeTab() === '3D Art' || activeTab() === 'Enterprise Software') {
+    @for (proj of projects(); track proj.title) {
+      @if (proj.category === activeTab()) {
+        <app-project-card [project]="proj"></app-project-card>
+      }
+    }
+  } @else if (activeTab() === 'Resume') {
+    <app-resume></app-resume>
+  } @else if (activeTab() === 'About') {
+    <app-about></app-about>
+  } @else {
+    <div class="text-neutral-500 mt-20 text-xl font-medium">
+      {{ activeTab() }} content coming soon...
+    </div>
+  }
+
+</main>
