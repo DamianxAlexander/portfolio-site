@@ -8,7 +8,7 @@
   @if (activeTab() === 'Tools & Pipelines' || activeTab() === '3D Art' || activeTab() === 'Enterprise Software') {
     @for (proj of projects(); track proj.title) {
       @if (proj.category === activeTab()) {
-        <app-project-card [project]="proj"></app-project-card>
+        <app-project-card [project]="proj" class="block w-full max-w-full"></app-project-card>
       }
     }
   } @else if (activeTab() === 'Resume') {

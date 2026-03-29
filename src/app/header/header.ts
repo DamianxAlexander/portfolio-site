@@ -8,6 +8,7 @@ import { Component, input, output } from '@angular/core'
 export class Header {
   currentTab = input.required<string>()
   tabChange = output<string>()
+  isMobileMenuOpen = false;
 
   tabs = ['About', 'Resume', 'Enterprise Software', 'Tools & Pipelines', '3D Art']
 }
