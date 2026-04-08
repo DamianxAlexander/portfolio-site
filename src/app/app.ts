@@ -3,11 +3,12 @@ import { ProjectCard } from './project-card/project-card'
 import { Header } from './header/header'
 import { Resume } from './resume/resume'
 import { About } from './about/about'
+import { Footer } from './footer/footer'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [ProjectCard, Header, Resume, About],
+  imports: [ProjectCard, Header, Resume, About, Footer],
   templateUrl: './app.html'
 })
 export class AppComponent {
@@ -26,6 +27,13 @@ export class AppComponent {
       category: '3D Art',
       imageUrl: 'images/Lighthouse_Render.png',
       description: 'A low poly 3D environment created to explore dynamic lighting techniques and water reflections.'
+    },
+    {
+      title: 'OASIS',
+      category: 'Enterprise Software',
+      description: 'A comprehensive internal enterprise application designed to manage the entire lifecycle of student service referrals. The system handles highly relational data spanning billing, student services, contracts and yearly projections, staffing assignments, and compliance reporting.',
+      imageUrl: 'images/architecture_state_flow.svg',
+      detailsKey: 'oasis'
     }
   ])
 }

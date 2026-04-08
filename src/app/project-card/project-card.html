@@ -13,7 +13,7 @@
           <source [src]="project().videoUrl" type="video/mp4">
         </video>
       } @else if (project().imageUrl) {
-        <img [src]="project().imageUrl" [alt]="project().title" class="w-full h-auto aspect-video rounded-xl shadow-2xl border border-neutral-700 object-cover">
+        <img [src]="project().imageUrl" [alt]="project().title" class="w-full h-auto rounded-xl shadow-2xl border border-neutral-700 object-contain bg-neutral-900 p-6">
       } @else {
         <div class="w-full aspect-video bg-neutral-900 rounded-xl border border-neutral-700 flex items-center justify-center text-neutral-500 shadow-inner">
           Project visuals coming soon
@@ -35,7 +35,7 @@
               <div class="bg-[#1e1e1e] rounded-xl overflow-hidden border border-neutral-700 shadow-xl">
                 <div class="bg-neutral-900 px-4 py-2 border-b border-neutral-700 text-xs text-neutral-500 font-mono flex justify-between">
                   <span>{{ feature.codeFile }}</span>
-                  <span class="text-cyan-600">Python</span>
+                  <span class="text-cyan-600">{{ feature.language || 'Code' }}</span>
                 </div>
                 <pre class="p-6 text-sm overflow-x-auto"><code class="text-neutral-300">{{ feature.codeSnippet }}</code></pre>
               </div>
